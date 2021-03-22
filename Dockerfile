@@ -15,6 +15,7 @@ WORKDIR /usr/share/nginx/html
 RUN apk add --no-cache nodejs npm
 RUN npm install -g @beam-australia/react-env
 ADD entrypoint.sh /var/entrypoint.sh
+RUN chmod +x /var/entrypoint.sh
 ENTRYPOINT ["/var/entrypoint.sh"]
 
 CMD ["nginx", "-g", "daemon off;"]
